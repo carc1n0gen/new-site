@@ -1,21 +1,27 @@
-import Heading from "@/components/Heading";
-import { getPostList } from "@/app/lib/posts";
+import { getPostList } from "@/lib/posts";
 import Link from "next/link";
 
-export default async function () {
+export default async function Blog() {
   const posts = await getPostList();
-  return (
-    <>
-      <Heading as="h1">Blog</Heading>
-
-      {posts.map((post) => (
-        <article key={post.url}>
-          <Link href={post.url}>
-            <Heading as="h2">{post.meta.title}</Heading>
+  return posts.map((post) => (
+    <article key={post.url} className="mt-6">
+      <header>
+        <Link href={post.url}>
+          <h2 className="text-3xl font-bold mb-2">{post.meta.title}</h2>
+        </Link>
+        <p className="mb-4 text-zinc-400">
+          posted by {post.meta.author} · {post.dateCreated.toDateString()}
+        </p>
+      </header>
+      <section>
+        <p className="mb-4">
+          {post.meta.description}{" "}
+          <Link href={post.url} className="font-bold">
+            Read more&hellip;
           </Link>
-          <p>{post.meta.description}</p>
-        </article>
-      ))}
-    </>
-  );
+        </p>
+      </section>
+      <footer className="mt-2 text-zinc-400"></footer>
+    </article>
+  ));
 }

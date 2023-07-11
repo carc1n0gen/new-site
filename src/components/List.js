@@ -10,7 +10,7 @@ export default function List({ as: Component, children }) {
       default:
         return "";
     }
-  });
+  }, [Component]);
   return (
     <Component className={`${listStyle} list-inside m-2`}>{children}</Component>
   );

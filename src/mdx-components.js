@@ -4,6 +4,7 @@
 // other libraries.
 
 import Blockquote from "./components/Blockquote";
+import CodeBlock from "./components/CodeBlock";
 import Heading from "./components/Heading";
 import List from "./components/List";
 
@@ -21,6 +22,7 @@ export function useMDXComponents(components) {
     ol: ({ children }) => <List as="ol">{children}</List>,
     ul: ({ children }) => <List as="ul">{children}</List>,
     blockquote: ({ children }) => <Blockquote>{children}</Blockquote>,
+    pre: ({ children }) => <CodeBlock>{children}</CodeBlock>,
     ...components,
   };
 }
