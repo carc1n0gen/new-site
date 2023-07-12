@@ -9,43 +9,31 @@ export const metadata = {
 
 export default function RootLayout({ children, ...props }) {
   return (
-    <html lang="en">
-      <link rel="icon" type="image/x-icon" href="/img/favicon.ico"></link>
+    <html lang="en" className="md:bg-blue-50">
       <body className="text-zinc-600">
-        <header className="">
-          <div className="p-4 flex flex-col items-center text-center">
+        <header className="bg-white text-center md:text-left mt-5 md:mt-0 md:pt-10 border-b border-b-zinc-300">
+          <div className="md:max-w-screen-md mx-auto">
             <img
               src="/avatar-new.jpg"
               alt="Avatar photo"
-              className="rounded-full"
+              className="rounded-full mx-auto md:float-right md:-mt-2"
               width="100"
               height="100"
             />
-            <Link href="/" className="mt-2">
-              <h1 className="text-5xl font-bold">Carson's Blog</h1>
-            </Link>
-            <p className="mt-2">
-              Somewhat coherent tutorials about web stuff and things.
-            </p>
+            <div className="mt-5">
+              <Link href="/" className="mt-2">
+                <h1 className="text-5xl font-bold">Carson's Blog</h1>
+              </Link>
+              <p className="mt-2">
+                Somewhat coherent tutorials about web stuff and things.
+              </p>
+            </div>
           </div>
-          <div className="border-y flex flex-col items-center text-center">
-            <Navigation />
-            <form action="/search" className="mb-4">
-              <input
-                type="text"
-                placeholder="Search for posts"
-                className="border border-r-0 rounded-md rounded-r-none p-1"
-              />
-              <button
-                type="submit"
-                className="px-4 py-1 border border-l-0 border-zinc-500 rounded-md rounded-l-none bg-zinc-500 text-white"
-              >
-                Search
-              </button>
-            </form>
-          </div>
+          <Navigation />
         </header>
-        <main className="px-4 py-2">{children}</main>
+        <main className="px-4 py-2 md:p-0 md:max-w-screen-md mx-auto">
+          {children}
+        </main>
         <footer className="mt-6 mb-4 text-center">&copy; Carson Evans</footer>
       </body>
     </html>
