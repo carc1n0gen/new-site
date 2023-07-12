@@ -14,7 +14,7 @@ export default async function ShowPost({ params: { year, month, day, slug } }) {
     `@/posts/${year}-${month}-${day}-${slug}.mdx`
   );
   return (
-    <article className="mt-6">
+    <article className="mt-6 md:p-6 bg-white md:border border-slate-300">
       <header>
         <h1 className="text-3xl font-bold mb-2">{meta.title}</h1>
         <p className="mb-4 text-zinc-400">

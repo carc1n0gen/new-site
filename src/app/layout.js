@@ -9,14 +9,14 @@ export const metadata = {
 
 export default function RootLayout({ children, ...props }) {
   return (
-    <html lang="en" className="md:bg-blue-50">
+    <html lang="en" className="md:bg-slate-50">
       <body className="text-zinc-600">
-        <header className="bg-white text-center md:text-left mt-5 md:mt-0 md:pt-10 border-b border-b-zinc-300">
-          <div className="md:max-w-screen-md mx-auto">
+        <header className="bg-white text-center md:text-left mt-5 md:mt-0 md:pt-10 border-b border-b-slate-300">
+          <div className="md:max-w-screen-md px-2 md:px-0 mx-auto">
             <img
               src="/avatar-new.jpg"
               alt="Avatar photo"
-              className="rounded-full mx-auto md:float-right md:-mt-2"
+              className="rounded-full mx-auto md:float-right md:-mt-4"
               width="100"
               height="100"
             />

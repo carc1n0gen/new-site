@@ -6,7 +6,7 @@ export default function CodeBlock({ children }) {
   const language = className.replace(/language-/, "");
 
   return (
-    <pre className="my-4 -mx-4">
+    <pre className="my-4 -mx-4 md:-mx-[25px]">
       <code
         className="hljs"
         dangerouslySetInnerHTML={{
