@@ -2,6 +2,10 @@
 
 import { useCallback, useState } from "react";
 
+export const metadata = {
+  title: "Contact - Carson's Blog",
+};
+
 export default function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [subject, setSubject] = useState("Blog Contact Form");
@@ -42,7 +46,7 @@ export default function Contact() {
             onSubmit={onSubmit}
           >
             <input type="hidden" name="subject" value={subject} />
-            <label htmlFor="name" className="text-2xl font-bold">
+            <label htmlFor="name" className="block text-2xl font-bold mb-2">
               Name
             </label>
             <input
@@ -54,7 +58,7 @@ export default function Contact() {
               required
               className="block w-full mb-4 p-2 bg-slate-50 border border-slate-300"
             />
-            <label htmlFor="email" className="text-2xl font-bold">
+            <label htmlFor="email" className="block text-2xl font-bold mb-2">
               Email
             </label>
             <input
@@ -66,7 +70,7 @@ export default function Contact() {
               required
               className="block w-full mb-4 p-2 bg-slate-50 border border-slate-300"
             />
-            <label htmlFor="message" className="text-2xl font-bold">
+            <label htmlFor="message" className="block text-2xl font-bold mb-2">
               Message
             </label>
             <textarea
