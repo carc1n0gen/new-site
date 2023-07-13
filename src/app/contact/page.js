@@ -1,10 +1,7 @@
 "use client";
 
+import Head from "next/head";
 import { useCallback, useState } from "react";
-
-export const metadata = {
-  title: "Contact - Carson's Blog",
-};
 
 export default function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);

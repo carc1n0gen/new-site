@@ -9,7 +9,7 @@ const activeClasses = "font-bold border-b-4 border-b-slate-300";
 export default function Navigation() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const [search, setSearch] = useState(searchParams.get("q"));
+  const [search, setSearch] = useState(searchParams.get("q") || "");
   return (
     <nav className="border-t border-t-slate-300 mt-5 md:mt-10 py-5">
       <div className="md:max-w-screen-md mx-auto">
