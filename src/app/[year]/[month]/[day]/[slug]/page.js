@@ -1,7 +1,8 @@
-import { getPostList } from "@/lib/posts";
+import Article from "@/components/Article";
+import { getPostList, getSinglePost } from "@/lib/posts";
 
 export async function generateMetadata({ params: { year, month, day, slug } }) {
-  const { meta } = await import(`@/posts/${year}-${month}-${day}-${slug}.mdx`);
+  const { meta } = await getSinglePost(year, month, day, slug);
   return {
     title: `${meta.title} - Carson's Blog`,
     description: meta.description,
@@ -10,26 +11,8 @@ export async function generateMetadata({ params: { year, month, day, slug } }) {
 }
 
 export default async function ShowPost({ params: { year, month, day, slug } }) {
-  const { default: Post, meta } = await import(
-    `@/posts/${year}-${month}-${day}-${slug}.mdx`
-  );
-  return (
-    <article className="mt-6 md:p-6 bg-white md:border border-slate-300">
-      <header>
-        <h1 className="text-3xl font-bold mb-2">{meta.title}</h1>
-        <p className="mb-4 text-zinc-400">
-          posted by {meta.author} ·{" "}
-          {new Date(`${year}-${month}-${day}`).toDateString()}
-        </p>
-      </header>
-      <section>
-        <Post />
-      </section>
-      {/* <footer>
-        
-      </footer> */}
-    </article>
-  );
+  const post = await getSinglePost(year, month, day, slug);
+  return <Article post={post} />;
 }
 
 export async function generateStaticParams() {

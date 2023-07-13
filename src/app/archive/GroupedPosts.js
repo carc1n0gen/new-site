@@ -31,11 +31,14 @@ export default function GroupedPosts({ posts }) {
   return Object.keys(groupedPosts)
     .reverse()
     .map((group) => (
-      <div className="mt-6 md:p-6 bg-white md:border border-slate-300">
+      <div
+        key={group}
+        className="mt-6 md:p-6 bg-white md:border border-slate-300"
+      >
         <h2 className="text-3xl font-bold mb-4">{group}</h2>
         <ul className="list-disc list-inside pl-4">
           {groupedPosts[group].map((post) => (
-            <li>
+            <li key={post.key}>
               <Link href={post.url} className="font-bold">
                 {post.meta.title}
               </Link>

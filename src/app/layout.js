@@ -7,14 +7,14 @@ export const metadata = {
   description: "Somewhat coherent tutorials about web stuff and things.",
 };
 
-export default function RootLayout({ children, ...props }) {
+export default function RootLayout({ children }) {
   return (
     <html lang="en" className="md:bg-slate-50">
       <body className="text-zinc-600">
         <header className="bg-white text-center md:text-left mt-5 md:mt-0 md:pt-10 border-b border-b-slate-300">
           <div className="md:max-w-screen-md px-2 md:px-0 mx-auto">
             <img
-              src="/avatar-new.jpg"
+              src="/img/avatar-new.jpg"
               alt="Avatar photo"
               className="rounded-full mx-auto md:float-right md:-mt-4"
               width="100"

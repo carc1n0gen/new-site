@@ -12,6 +12,8 @@ export default function List({ as: Component, children }) {
     }
   }, [Component]);
   return (
-    <Component className={`${listStyle} list-inside m-2`}>{children}</Component>
+    <Component className={`${listStyle} list-inside mx-2 my-4`}>
+      {children}
+    </Component>
   );
 }

@@ -32,3 +32,7 @@ export async function getPostList() {
     })
   );
 }
+
+export async function getRecentPosts() {
+  return (await getPostList()).slice(0, 5);
+}

@@ -8,11 +8,14 @@ import Blockquote from "./components/Blockquote";
 import CodeBlock from "./components/CodeBlock";
 import Heading from "./components/Heading";
 import List from "./components/List";
-import { Table } from "./components/Table";
+import Paragraph from "./components/Paragraph";
+import Code from "./components/Code";
+// import { Table } from "./components/Table";
 
 // This file is required to use MDX in `app` directory.
 export function useMDXComponents(components) {
   return {
+    p: ({ children }) => <Paragraph>{children}</Paragraph>,
     a: ({ children, ...props }) => <Anchor {...props}>{children}</Anchor>,
     h1: ({ children, ...props }) => (
       <Heading {...props} as="h1">
@@ -60,6 +63,7 @@ export function useMDXComponents(components) {
     pre: ({ children, ...props }) => (
       <CodeBlock {...props}>{children}</CodeBlock>
     ),
+    code: ({ children }) => <Code>{children}</Code>,
     // table: (props) => <Table {...props} />,
     ...components,
   };

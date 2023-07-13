@@ -1,4 +1,4 @@
-import GroupedPosts from "@/components/GroupedPosts";
+import GroupedPosts from "./GroupedPosts";
 import { getPostList } from "@/lib/posts";
 
 export const metadata = {
