@@ -1,20 +1,15 @@
-import Article from "@/components/Article";
+import SearchResults from "@/components/SearchResults";
 import { getPostList } from "@/lib/posts";
 
-export default async function Search({ searchParams: { q } }) {
+export default async function Search() {
   const posts = await getPostList();
-  const filteredPosts = posts.filter(
-    (post) =>
-      q !== "" && post.meta.title.toLowerCase().includes(q.toLowerCase())
+  return (
+    <SearchResults
+      // Cannot pass functions (components are functions) to client
+      // components so we pull out Post, and pass alon ...rest
+      posts={posts.map(({ Post, ...rest }) => ({
+        ...rest,
+      }))}
+    />
   );
-
-  if (filteredPosts.length === 0) {
-    return (
-      <section className="mt-6 md:p-6 bg-white md:border border-slate-300">
-        <p>There is nothing here.</p>
-      </section>
-    );
-  }
-
-  return filteredPosts.map((post) => <Article post={post} isPreview />);
 }

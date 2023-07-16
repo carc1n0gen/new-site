@@ -9,7 +9,12 @@ export default function Article({ post, isPreview }) {
           <h2 className="text-3xl font-bold mb-2">{post.meta.title}</h2>
         </Link>
         <p className="mb-4 text-sm text-slate-500">
-          posted by {post.meta.author} · {post.dateCreated.toDateString()}
+          posted by {post.meta.author} ·{" "}
+          {post.dateCreated.toLocaleString("default", {
+            month: "short",
+            day: "numeric",
+            year: "numeric",
+          })}
         </p>
       </header>
       <section>
