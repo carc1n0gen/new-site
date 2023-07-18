@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 
 export default function ContactForm() {
@@ -9,6 +9,20 @@ export default function ContactForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    matchMedia("(prefers-color-scheme: dark)").addEventListener(
+      "change",
+      (e) => {
+        if (e.target.matches) {
+          setTheme("dark");
+        } else {
+          setTheme("light");
+        }
+      }
+    );
+  }, []);
 
   const onSubmit = useCallback(async (e) => {
     e.preventDefault();
@@ -78,13 +92,13 @@ export default function ContactForm() {
               required
               className="block w-full mb-4 p-2 bg-zinc-50 dark:bg-zinc-700 rounded border border-zinc-300 dark:border-zinc-500 h-72"
             ></textarea>
-            <div className="flex justify-end items-center">
+            <div className="flex flex-col md:flex-row items-center justify-center md:justify-end">
               <ReCAPTCHA
                 size="normal"
-                // theme="dark" // TODO: Figure this out
+                theme={theme}
                 sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
               />
-              <button className="ml-4 px-14 py-2 bg-blue-500 text-3xl text-blue-50 rounded-md border dark:border-blue-400">
+              <button className="mt-4 md:ml-4 md:mt-0 px-14 py-2 bg-blue-500 text-3xl text-blue-50 rounded-md border dark:border-blue-400">
                 Send
               </button>
             </div>
