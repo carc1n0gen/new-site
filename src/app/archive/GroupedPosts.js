@@ -22,7 +22,7 @@ export default function GroupedPosts({ posts }) {
 
   if (Object.keys(groupedPosts).length === 0) {
     return (
-      <div className="mt-6 md:p-6 bg-white md:border border-slate-300">
+      <div className="mt-6 md:p-6 bg-white dark:bg-black md:border border-slate-300 dark:border-slate-600">
         <p>There is nothing here.</p>
       </div>
     );
@@ -33,7 +33,7 @@ export default function GroupedPosts({ posts }) {
     .map((group) => (
       <div
         key={group}
-        className="mt-6 md:p-6 bg-white md:border border-slate-300"
+        className="mt-6 md:p-6 bg-white dark:bg-black md:border border-slate-300 dark:border-slate-600"
       >
         <h2 className="text-3xl font-bold mb-4">{group}</h2>
         <ul className="list-disc list-inside pl-4">

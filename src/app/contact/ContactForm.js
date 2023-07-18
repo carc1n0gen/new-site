@@ -30,7 +30,7 @@ export default function ContactForm() {
   }, []);
 
   return (
-    <section className="mt-6 md:p-6 bg-white md:border border-slate-300">
+    <section className="mt-6 md:p-6 bg-white dark:bg-black md:border border-slate-300 dark:border-slate-600">
       {!isSubmitted && (
         <>
           <p className="mb-4">

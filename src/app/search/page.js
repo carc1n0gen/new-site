@@ -1,6 +1,10 @@
 import SearchResults from "@/components/SearchResults";
 import { getPostList } from "@/lib/posts";
 
+export const metadata = {
+  title: "Search - Carson's Blog",
+};
+
 export default async function Search() {
   const posts = await getPostList();
   return (

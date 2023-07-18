@@ -3,7 +3,7 @@ import DisqusComments from "./DisqusComments";
 
 export default function Article({ post, isPreview }) {
   return (
-    <article className="mt-6 md:p-6 bg-white md:border border-slate-300">
+    <article className="mt-6 md:p-6 bg-white dark:bg-black md:border border-slate-300 dark:border-slate-600">
       <header>
         <Link href={post.url}>
           <h2 className="text-3xl font-bold mb-2">{post.meta.title}</h2>
