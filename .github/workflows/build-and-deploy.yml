@@ -4,6 +4,12 @@ on:
   push:
     branches:
       - main
+env:
+  NEXT_PUBLIC_FORM_SPREE_ID: xknpaozl
+  NEXT_PUBLIC_DISQUS_SHORTNAME: carsonsblog
+  NEXT_PUBLIC_RECAPTCHA_SITE_KEY: 6Lc1NcYZAAAAAPNz7pCk3XBOxU4Pkd05SnrpOhOg
+permissions:
+  contents: write
 jobs:
   build:
     runs-on: ubuntu-latest
