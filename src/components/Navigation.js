@@ -5,18 +5,18 @@ import { usePathname, useSearchParams } from "next/navigation";
 import { useState } from "react";
 
 const activeClasses =
-  "font-bold border-b-4 border-b-slate-300 dark:border-b-slate-600";
+  "font-bold border-b-4 border-b-zinc-300 dark:border-b-zinc-600";
 
 export default function Navigation() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const [search, setSearch] = useState(searchParams.get("q") || "");
   return (
-    <nav className="border-t border-t-slate-300 dark:border-t-slate-600 mt-5 md:mt-10 py-5">
+    <nav className="border-t border-t-zinc-300 dark:border-t-zinc-600 mt-5 md:mt-10 py-5">
       <div className="md:max-w-screen-md mx-auto">
         <Link
           href="/"
-          className={`mr-6 hover:text-slate-400 dark:hover:text-slate-500 ${
+          className={`mr-6 hover:text-zinc-400 dark:hover:text-zinc-200 ${
             pathname !== "/archive/" && pathname !== "/contact/"
               ? activeClasses
               : ""
@@ -26,7 +26,7 @@ export default function Navigation() {
         </Link>
         <Link
           href="/archive"
-          className={`mr-6 hover:text-slate-400 dark:hover:text-slate-500  ${
+          className={`mr-6 hover:text-zinc-400 dark:hover:text-zinc-200  ${
             pathname === "/archive/" ? activeClasses : ""
           }`}
         >
@@ -34,7 +34,7 @@ export default function Navigation() {
         </Link>
         <Link
           href="/contact"
-          className={`mr-6 hover:text-slate-400 dark:hover:text-slate-500  ${
+          className={`mr-6 hover:text-zinc-400 dark:hover:text-zinc-200  ${
             pathname === "/contact/" ? activeClasses : ""
           }`}
         >
@@ -46,13 +46,13 @@ export default function Navigation() {
             name="q"
             placeholder="Search for posts"
             aria-label="Search for posts"
-            className="border border-slate-300 dark:border-slate-400 border-r-0 rounded-md rounded-r-none dark:bg-slate-100 p-1"
+            className="border dark:border-zinc-500 border-r-0 rounded-md rounded-r-none p-1 bg-zinc-50 dark:bg-zinc-700"
             value={search}
             onChange={({ target }) => setSearch(target.value)}
           />
           <button
             type="submit"
-            className="px-4 py-1 border border-l-0 border-slate-500 dark:border-slate-400 rounded-md rounded-l-none bg-slate-500 dark:bg-slate-400 text-white dark:text-black"
+            className="px-4 py-1 border border-l-0 border-blue-500 dark:border-blue-400 rounded-md rounded-l-none bg-blue-500 dark:bg-blue-500 text-blue-50 dark:text-blue-950"
           >
             Search
           </button>

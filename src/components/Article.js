@@ -3,12 +3,12 @@ import DisqusComments from "./DisqusComments";
 
 export default function Article({ post, isPreview }) {
   return (
-    <article className="mt-6 md:p-6 bg-white dark:bg-black md:border border-slate-300 dark:border-slate-600">
+    <article className="mt-6 md:p-6 bg-white dark:bg-black md:border border-zinc-300 dark:border-zinc-600">
       <header>
         <Link href={post.url}>
           <h2 className="text-3xl font-bold mb-2">{post.meta.title}</h2>
         </Link>
-        <p className="mb-4 text-sm text-slate-500">
+        <p className="mb-4 text-sm text-zinc-500">
           posted by {post.meta.author} ·{" "}
           {post.dateCreated.toLocaleString("default", {
             month: "short",

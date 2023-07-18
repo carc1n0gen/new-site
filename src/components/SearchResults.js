@@ -13,7 +13,7 @@ export default function SearchResults({ posts }) {
 
   if (filteredPosts.length === 0) {
     return (
-      <section className="mt-6 md:p-6 bg-white md:border border-slate-300">
+      <section className="mt-6 md:p-6 bg-white md:border border-zinc-300">
         <p>There is nothing here.</p>
       </section>
     );

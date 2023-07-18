@@ -30,7 +30,7 @@ export default function ContactForm() {
   }, []);
 
   return (
-    <section className="mt-6 md:p-6 bg-white dark:bg-black md:border border-slate-300 dark:border-slate-600">
+    <section className="mt-6 md:p-6 bg-white dark:bg-black md:border border-zinc-300 dark:border-zinc-600">
       {!isSubmitted && (
         <>
           <p className="mb-4">
@@ -53,7 +53,7 @@ export default function ContactForm() {
               value={name}
               onChange={onNameChange}
               required
-              className="block w-full mb-4 p-2 bg-slate-50 border border-slate-300"
+              className="block w-full mb-4 p-2 bg-zinc-50 dark:bg-zinc-700 rounded border border-zinc-300 dark:border-zinc-500"
             />
             <label htmlFor="email" className="block text-2xl font-bold mb-2">
               Email
@@ -65,7 +65,7 @@ export default function ContactForm() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="block w-full mb-4 p-2 bg-slate-50 border border-slate-300"
+              className="block w-full mb-4 p-2 bg-zinc-50 dark:bg-zinc-700 rounded border border-zinc-300 dark:border-zinc-500"
             />
             <label htmlFor="message" className="block text-2xl font-bold mb-2">
               Message
@@ -76,14 +76,15 @@ export default function ContactForm() {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               required
-              className="block w-full mb-4 p-2 bg-slate-50 border border-slate-300 h-72"
+              className="block w-full mb-4 p-2 bg-zinc-50 dark:bg-zinc-700 rounded border border-zinc-300 dark:border-zinc-500 h-72"
             ></textarea>
             <div className="flex justify-end items-center">
               <ReCAPTCHA
                 size="normal"
+                // theme="dark" // TODO: Figure this out
                 sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
               />
-              <button className="ml-4 px-10 py-2 bg-slate-500 text-white rounded-md">
+              <button className="ml-4 px-14 py-2 bg-blue-500 text-3xl text-blue-50 rounded-md border dark:border-blue-400">
                 Send
               </button>
             </div>

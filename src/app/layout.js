@@ -9,12 +9,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="en"
-      className="dark:bg-black md:bg-slate-50 md:dark:bg-slate-900"
-    >
-      <body className="text-slate-700 dark:text-slate-300">
-        <header className="bg-white dark:bg-black text-center md:text-left mt-5 md:mt-0 md:pt-10 border-b border-b-slate-300 dark:border-b-slate-600">
+    <html lang="en" className="dark:bg-black md:bg-zinc-50 md:dark:bg-zinc-800">
+      <body className="text-zinc-700 dark:text-zinc-300">
+        <header className="bg-white dark:bg-black text-center md:text-left mt-5 md:mt-0 md:pt-10 border-b border-b-zinc-300 dark:border-b-zinc-600">
           <div className="md:max-w-screen-md px-2 md:px-0 mx-auto">
             <img
               src="/img/avatar-new.jpg"

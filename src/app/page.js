@@ -9,7 +9,7 @@ export default async function Blog() {
       {posts.map((post) => (
         <Article key={post.url} post={post} isPreview />
       ))}
-      <div className="mt-6 md:p-6 bg-white dark:bg-black md:border border-slate-300 dark:border-slate-600 text-center">
+      <div className="mt-6 md:p-6 bg-white dark:bg-black md:border border-zinc-300 dark:border-zinc-600 text-center">
         <Link href="/archive" className="font-bold text-2xl">
           All posts 👉
         </Link>
