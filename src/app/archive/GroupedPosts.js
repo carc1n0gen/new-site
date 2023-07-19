@@ -3,10 +3,6 @@ import { useMemo } from "react";
 
 import Card from "@/components/Card";
 
-export const meta = {
-  title: "Archive | Carson's Blog",
-};
-
 export default function GroupedPosts({ posts }) {
   const groupedPosts = useMemo(() => {
     const groups = {};
@@ -24,9 +20,9 @@ export default function GroupedPosts({ posts }) {
 
   if (Object.keys(groupedPosts).length === 0) {
     return (
-      <div className="mt-6 md:p-6 bg-white dark:bg-black md:border border-zinc-300 dark:border-zinc-600">
+      <Card>
         <p>There is nothing here.</p>
-      </div>
+      </Card>
     );
   }
 
