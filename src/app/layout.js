@@ -1,6 +1,8 @@
 import Link from "next/link";
-import "./globals.css";
+
 import Navigation from "@/components/Navigation";
+
+import "./globals.css";
 
 export const metadata = {
   title: "Carson's Blog",

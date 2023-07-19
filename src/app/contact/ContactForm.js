@@ -3,6 +3,8 @@
 import { useCallback, useEffect, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 
+import Card from "@/components/Card";
+
 export default function ContactForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [subject, setSubject] = useState("Blog Contact Form");
@@ -44,7 +46,7 @@ export default function ContactForm() {
   }, []);
 
   return (
-    <section className="mt-6 md:p-6 bg-white dark:bg-black md:border border-zinc-300 dark:border-zinc-600">
+    <Card as="section">
       {!isSubmitted && (
         <>
           <p className="mb-4">
@@ -111,6 +113,6 @@ export default function ContactForm() {
           <p>I will get back to you ASAP.</p>
         </>
       )}
-    </section>
+    </Card>
   );
 }

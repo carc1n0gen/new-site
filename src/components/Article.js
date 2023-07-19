@@ -1,9 +1,11 @@
 import Link from "next/link";
+
+import Card from "./Card";
 import DisqusComments from "./DisqusComments";
 
 export default function Article({ post, isPreview }) {
   return (
-    <article className="mt-6 md:p-6 bg-white dark:bg-black md:border border-zinc-300 dark:border-zinc-600">
+    <Card as="article">
       <header>
         <Link href={post.url}>
           <h2 className="text-3xl font-bold mb-2">{post.meta.title}</h2>
@@ -34,6 +36,6 @@ export default function Article({ post, isPreview }) {
           <DisqusComments title={post.meta.title} postUrl={post.url} />
         </footer>
       )}
-    </article>
+    </Card>
   );
 }

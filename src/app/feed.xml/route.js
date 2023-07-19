@@ -1,5 +1,6 @@
-import { getPostList } from "@/lib/posts";
 import { Feed } from "feed";
+
+import { getPostList } from "@/lib/posts";
 
 export async function GET() {
   const posts = await getPostList();

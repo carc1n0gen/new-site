@@ -1,7 +1,9 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
+
 import Article from "@/components/Article";
+import Card from "@/components/Card";
 
 export default function SearchResults({ posts }) {
   const searchParams = useSearchParams();
@@ -13,9 +15,9 @@ export default function SearchResults({ posts }) {
 
   if (filteredPosts.length === 0) {
     return (
-      <section className="mt-6 md:p-6 bg-white md:border border-zinc-300">
+      <Card as="section">
         <p>There is nothing here.</p>
-      </section>
+      </Card>
     );
   }
 

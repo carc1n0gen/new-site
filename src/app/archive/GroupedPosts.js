@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { useMemo } from "react";
 
+import Card from "@/components/Card";
+
 export const meta = {
   title: "Archive | Carson's Blog",
 };
@@ -31,10 +33,7 @@ export default function GroupedPosts({ posts }) {
   return Object.keys(groupedPosts)
     .reverse()
     .map((group) => (
-      <div
-        key={group}
-        className="mt-6 md:p-6 bg-white dark:bg-black md:border border-zinc-300 dark:border-zinc-600"
-      >
+      <Card key={group}>
         <h2 className="text-3xl font-bold mb-4">{group}</h2>
         <ul className="list-disc list-inside pl-4">
           {groupedPosts[group].map((post) => (
@@ -51,6 +50,6 @@ export default function GroupedPosts({ posts }) {
             </li>
           ))}
         </ul>
-      </div>
+      </Card>
     ));
 }

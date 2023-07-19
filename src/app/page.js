@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 import Article from "@/components/Article";
 import { getRecentPosts } from "@/lib/posts";
 
