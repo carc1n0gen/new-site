@@ -1,5 +1,5 @@
-import path from "path";
 import fs from "fs/promises";
+import path from "path";
 
 const POSTS_DIR = path.join(process.cwd(), "src/posts");
 
@@ -29,7 +29,7 @@ export async function getPostList() {
       const [date, slug] = [name.substring(0, 10), name.substring(11)];
       const [year, month, day] = date.split("-");
       return getSinglePost(year, month, day, slug);
-    })
+    }),
   );
 }
 

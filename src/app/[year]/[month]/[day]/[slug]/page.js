@@ -17,13 +17,11 @@ export default async function ShowPost({ params: { year, month, day, slug } }) {
 
 export async function generateStaticParams() {
   return await Promise.all(
-    (
-      await getPostList()
-    ).map((post) => ({
+    (await getPostList()).map((post) => ({
       year: post.year,
       month: post.month,
       day: post.day,
       slug: post.slug,
-    }))
+    })),
   );
 }
