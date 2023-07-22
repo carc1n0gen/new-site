@@ -6,6 +6,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import Card from "@/components/Card";
 
 export default function ContactForm() {
+  const [key, setKey] = useState(0);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [subject, setSubject] = useState("Blog Contact Form");
   const [name, setName] = useState("");
@@ -22,9 +23,10 @@ export default function ContactForm() {
         } else {
           setTheme("light");
         }
-      }
+        setKey(key + 1);
+      },
     );
-  }, []);
+  }, [key]);
 
   const onSubmit = useCallback(async (e) => {
     e.preventDefault();
@@ -96,6 +98,8 @@ export default function ContactForm() {
             ></textarea>
             <div className="flex flex-col md:flex-row items-center justify-center md:justify-end">
               <ReCAPTCHA
+                // This key is used to remount the component so the theme updates
+                key={key}
                 size="normal"
                 theme={theme}
                 sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
