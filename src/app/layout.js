@@ -45,16 +45,21 @@ export default function RootLayout({ children }) {
         </main>
         <footer className="mt-6 mb-6 flex items-center justify-center">
           &copy; Carson Evans{" "}
-          <Link href="https://github.com/carc1n0gen" className="ml-5">
+          <Link
+            href="https://github.com/carc1n0gen"
+            target="_blank"
+            className="ml-5"
+          >
             <FaGithub className="inline" />
           </Link>
           <Link
             href="https://www.instagram.com/carsonphotosandstuff/"
+            target="_blank"
             className="ml-3"
           >
             <FaInstagram className="inline" />
           </Link>
-          <Link href="/feed.xml" className="ml-3">
+          <Link href="/feed.xml" target="_blank" className="ml-3">
             <FaRss className="inline" />
           </Link>
         </footer>
