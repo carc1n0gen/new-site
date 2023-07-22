@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useState } from "react";
+import { FaRss } from "react-icons/fa";
 
 const activeClasses =
   "font-bold border-b-4 border-b-zinc-300 dark:border-b-zinc-600";
@@ -39,6 +40,9 @@ export default function Navigation() {
           }`}
         >
           Contact
+        </Link>
+        <Link href="/feed.xml">
+          <FaRss className="inline -mt-1" />
         </Link>
         <form action="/search" className="mt-5 md:-mt-1 md:float-right">
           <input

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FaGithub, FaInstagram, FaRss } from "react-icons/fa";
 
 import Navigation from "@/components/Navigation";
 
@@ -16,7 +17,7 @@ export default function RootLayout({ children }) {
         rel="alternate"
         type="application/atom+xml"
         title="Atom Feed for Carson's Blog"
-        href="/feed"
+        href="/feed.xml"
       />
       <body className="text-zinc-700 dark:text-zinc-300">
         <header className="bg-white dark:bg-black text-center md:text-left mt-5 md:mt-0 md:pt-10 border-b border-b-zinc-300 dark:border-b-zinc-600">
@@ -42,7 +43,21 @@ export default function RootLayout({ children }) {
         <main className="px-4 py-2 md:p-0 md:max-w-screen-md mx-auto">
           {children}
         </main>
-        <footer className="mt-6 mb-6 text-center">&copy; Carson Evans</footer>
+        <footer className="mt-6 mb-6 flex items-center justify-center">
+          &copy; Carson Evans{" "}
+          <Link href="https://github.com/carc1n0gen" className="ml-5">
+            <FaGithub className="inline" />
+          </Link>
+          <Link
+            href="https://www.instagram.com/carsonphotosandstuff/"
+            className="ml-3"
+          >
+            <FaInstagram className="inline" />
+          </Link>
+          <Link href="/feed.xml" className="ml-3">
+            <FaRss className="inline" />
+          </Link>
+        </footer>
       </body>
     </html>
   );
