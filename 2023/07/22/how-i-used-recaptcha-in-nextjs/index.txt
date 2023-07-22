@@ -1,5 +1,5 @@
 1:HL["/_next/static/css/8cfaf464e5f7cbbf.css",{"as":"style"}]
-0:["aKAPFSLzMQ_Wzw_SpXCtd",[[["",{"children":[["year","2023","d"],{"children":[["month","07","d"],{"children":[["day","22","d"],{"children":[["slug","how-i-used-recaptcha-in-nextjs","d"],{"children":["__PAGE__?{\"year\":\"2023\",\"month\":\"07\",\"day\":\"22\",\"slug\":\"how-i-used-recaptcha-in-nextjs\"}",{}]}]}]}]}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/8cfaf464e5f7cbbf.css","precedence":"next"}]],["$L3",null]]]]]
+0:["x2SJfWd4khe-C8kKnb-uf",[[["",{"children":[["year","2023","d"],{"children":[["month","07","d"],{"children":[["day","22","d"],{"children":[["slug","how-i-used-recaptcha-in-nextjs","d"],{"children":["__PAGE__?{\"year\":\"2023\",\"month\":\"07\",\"day\":\"22\",\"slug\":\"how-i-used-recaptcha-in-nextjs\"}",{}]}]}]}]}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/8cfaf464e5f7cbbf.css","precedence":"next"}]],["$L3",null]]]]]
 4:I{"id":7095,"chunks":["95:static/chunks/95-b42e21927908bec6.js","224:static/chunks/224-45995354792692c9.js","106:static/chunks/app/[year]/[month]/[day]/[slug]/page-fd3e7a5daa90e646.js"],"name":"","async":false}
 5:I{"id":7289,"chunks":["95:static/chunks/95-b42e21927908bec6.js","185:static/chunks/app/layout-766a84e56334bd88.js"],"name":"","async":false}
 6:I{"id":9180,"chunks":["272:static/chunks/webpack-64f86ae5b723ecca.js","253:static/chunks/bce60fc1-3d7875a7a6202410.js","698:static/chunks/698-4595f783858dddc6.js"],"name":"default","async":false}
@@ -29,7 +29,7 @@ d:I{"id":4368,"chunks":["95:static/chunks/95-b42e21927908bec6.js","224:static/ch
       <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Submit&quot;</span> /&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span></span>
   );
-}b:Tbab,<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">MyForm</span>(<span class="hljs-params"></span>) {
+}b:Tbf9,<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">MyForm</span>(<span class="hljs-params"></span>) {
   <span class="hljs-keyword">const</span> [theme, setTheme] = <span class="hljs-title function_">useState</span>(<span class="hljs-string">&quot;dark&quot;</span>);
 
   <span class="hljs-title function_">useEffect</span>(<span class="hljs-function">() =&gt;</span> {
@@ -48,7 +48,10 @@ d:I{"id":4368,"chunks":["95:static/chunks/95-b42e21927908bec6.js","224:static/ch
 
     <span class="hljs-comment">// use the cleanup function to remove the event listener.</span>
     <span class="hljs-keyword">return</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">cleanup</span>(<span class="hljs-params"></span>) {
-      <span class="hljs-title function_">matchMedia</span>(<span class="hljs-string">&quot;(prefers-color-scheme: dark)&quot;</span>).<span class="hljs-title function_">removeEventListener</span>(handler);
+      <span class="hljs-title function_">matchMedia</span>(<span class="hljs-string">&quot;(prefers-color-scheme: dark)&quot;</span>).<span class="hljs-title function_">removeEventListener</span>(
+        <span class="hljs-string">&quot;change&quot;</span>,
+        handler,
+      );
     };
   }, []);
 
@@ -59,7 +62,7 @@ d:I{"id":4368,"chunks":["95:static/chunks/95-b42e21927908bec6.js","224:static/ch
       <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Submit&quot;</span> /&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span></span>
   );
-}c:Tc7c,<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">MyForm</span>(<span class="hljs-params"></span>) {
+}c:Tcca,<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">MyForm</span>(<span class="hljs-params"></span>) {
   <span class="hljs-keyword">const</span> [key, setKey] = <span class="hljs-title function_">useState</span>(<span class="hljs-number">0</span>); <span class="hljs-comment">// Our new key state variable</span>
   <span class="hljs-keyword">const</span> [theme, setTheme] = <span class="hljs-title function_">useState</span>(<span class="hljs-string">&quot;dark&quot;</span>);
 
@@ -79,7 +82,10 @@ d:I{"id":4368,"chunks":["95:static/chunks/95-b42e21927908bec6.js","224:static/ch
     );
 
     <span class="hljs-keyword">return</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">cleanup</span>(<span class="hljs-params"></span>) {
-      <span class="hljs-title function_">matchMedia</span>(<span class="hljs-string">&quot;(prefers-color-scheme: dark)&quot;</span>).<span class="hljs-title function_">removeEventListener</span>(handler);
+      <span class="hljs-title function_">matchMedia</span>(<span class="hljs-string">&quot;(prefers-color-scheme: dark)&quot;</span>).<span class="hljs-title function_">removeEventListener</span>(
+        <span class="hljs-string">&quot;change&quot;</span>,
+        handler,
+      );
     };
   }, [key]); <span class="hljs-comment">// Don&#x27;t forget to add key to the dependency array</span>
 
