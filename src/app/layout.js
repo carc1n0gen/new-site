@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
         <main className="px-4 py-2 md:p-0 md:max-w-screen-md mx-auto">
           {children}
         </main>
-        <footer className="mt-6 mb-4 text-center">&copy; Carson Evans</footer>
+        <footer className="mt-6 mb-6 text-center">&copy; Carson Evans</footer>
       </body>
     </html>
   );
