@@ -28,7 +28,10 @@ export default function ContactForm() {
     );
 
     return function cleanup() {
-      matchMedia("(prefers-color-scheme: dark)").removeEventListener(handler);
+      matchMedia("(prefers-color-scheme: dark)").removeEventListener(
+        "change",
+        handler,
+      );
     };
   }, [key]);
 

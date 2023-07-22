@@ -112,7 +112,10 @@ export default function MyForm() {
 
     // use the cleanup function to remove the event listener.
     return function cleanup() {
-      matchMedia("(prefers-color-scheme: dark)").removeEventListener(handler);
+      matchMedia("(prefers-color-scheme: dark)").removeEventListener(
+        "change",
+        handler,
+      );
     };
   }, []);
 
@@ -155,7 +158,10 @@ export default function MyForm() {
     );
 
     return function cleanup() {
-      matchMedia("(prefers-color-scheme: dark)").removeEventListener(handler);
+      matchMedia("(prefers-color-scheme: dark)").removeEventListener(
+        "change",
+        handler,
+      );
     };
   }, [key]); // Don't forget to add key to the dependency array
 

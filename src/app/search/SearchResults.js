@@ -10,7 +10,7 @@ export default function SearchResults({ posts }) {
   const q = searchParams.get("q");
   const filteredPosts = posts.filter(
     (post) =>
-      q !== "" && post.meta.title.toLowerCase().includes(q.toLowerCase())
+      q !== "" && post.meta.title.toLowerCase().includes(q.toLowerCase()),
   );
 
   if (filteredPosts.length === 0) {

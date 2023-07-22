@@ -2,14 +2,13 @@
 // to be used in MDX files. You can import and use any
 // React component you want, including components from
 // other libraries.
-
 import Anchor from "./components/Anchor";
 import Blockquote from "./components/Blockquote";
+import Code from "./components/Code";
 import CodeBlock from "./components/CodeBlock";
 import Heading from "./components/Heading";
 import List from "./components/List";
 import Paragraph from "./components/Paragraph";
-import Code from "./components/Code";
 
 // This file is required to use MDX in `app` directory.
 export function useMDXComponents(components) {
