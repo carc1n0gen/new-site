@@ -11,8 +11,8 @@ export default async function Blog() {
       {posts.map((post) => (
         <Article key={post.url} post={post} isPreview />
       ))}
-      <Card>
-        <Link href="/archive" className="font-bold text-2xl">
+      <Card className="text-center">
+        <Link href="/archive" className="font-bold text-2xl center">
           All posts 👉
         </Link>
       </Card>
