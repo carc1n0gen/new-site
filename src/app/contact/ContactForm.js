@@ -15,7 +15,7 @@ export default function ContactForm() {
   const [theme, setTheme] = useState("dark");
 
   useEffect(() => {
-    matchMedia("(prefers-color-scheme: dark)").addEventListener(
+    const handler = matchMedia("(prefers-color-scheme: dark)").addEventListener(
       "change",
       (e) => {
         if (e.target.matches) {
@@ -26,6 +26,10 @@ export default function ContactForm() {
         setKey(key + 1);
       },
     );
+
+    return function cleanup() {
+      matchMedia("(prefers-color-scheme: dark)").removeEventListener(handler);
+    };
   }, [key]);
 
   const onSubmit = useCallback(async (e) => {
