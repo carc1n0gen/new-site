@@ -33,7 +33,7 @@ export default function GroupedPosts({ posts }) {
         <h2 className="text-3xl font-bold mb-4">{group}</h2>
         <ul className="list-disc list-inside pl-4">
           {groupedPosts[group].map((post) => (
-            <li key={post.key}>
+            <li key={post.url}>
               <Link href={post.url} className="font-bold">
                 {post.meta.title}
               </Link>
