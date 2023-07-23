@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { FaGithub, FaInstagram, FaRss } from "react-icons/fa";
 
-import GoogleAnalytics from "@/components/GoogleAnalytics";
-import Navigation from "@/components/Navigation";
+import GoogleAnalytics from "@/components/client/GoogleAnalytics";
+import Navigation from "@/components/client/Navigation";
 
 import "./globals.css";
 

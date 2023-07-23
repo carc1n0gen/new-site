@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import Card from "./Card";
-import DisqusComments from "./DisqusComments";
+import DisqusComments from "./client/DisqusComments";
 
 export default function Article({ post, isPreview }) {
   return (

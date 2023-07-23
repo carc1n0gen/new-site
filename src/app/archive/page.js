@@ -1,6 +1,5 @@
+import GroupedPosts from "@/components/GroupedPosts";
 import { getPostList } from "@/lib/posts";
-
-import GroupedPosts from "./GroupedPosts";
 
 export const metadata = {
   title: "Archive - Carson's Blog",

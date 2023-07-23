@@ -1,6 +1,5 @@
+import SearchResults from "@/components/client/SearchResults";
 import { getPostList } from "@/lib/posts";
-
-import SearchResults from "./SearchResults";
 
 export const metadata = {
   title: "Search - Carson's Blog",

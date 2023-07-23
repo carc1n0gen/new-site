@@ -4,8 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Suspense } from "react";
 
+import SearchBoxFallback from "../SearchBoxFallback";
 import SearchBox from "./SearchBox";
-import SearchBoxFallback from "./SearchBoxFallback";
 
 const activeClasses =
   "font-bold border-b-4 border-b-zinc-300 dark:border-b-zinc-600";
