@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { FaGithub, FaInstagram, FaRss } from "react-icons/fa";
 
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 import Navigation from "@/components/Navigation";
 
 import "./globals.css";
@@ -63,6 +64,7 @@ export default function RootLayout({ children }) {
             <FaRss className="inline" />
           </Link>
         </footer>
+        <GoogleAnalytics />
       </body>
     </html>
   );
