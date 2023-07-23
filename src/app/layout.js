@@ -60,9 +60,9 @@ export default function RootLayout({ children }) {
           >
             <FaInstagram className="inline" />
           </Link>
-          <Link href="/feed.xml" target="_blank" className="ml-3">
+          <a href="/feed.xml" target="_blank" className="ml-3">
             <FaRss className="inline" />
-          </Link>
+          </a>
         </footer>
         <GoogleAnalytics />
       </body>

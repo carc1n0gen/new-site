@@ -41,9 +41,9 @@ export default function Navigation() {
         >
           Contact
         </Link>
-        <Link href="/feed.xml" target="_blank">
+        <a href="/feed.xml" target="_blank">
           <FaRss className="inline -mt-1" />
-        </Link>
+        </a>
         <form action="/search" className="mt-5 md:-mt-1 md:float-right">
           <input
             type="text"
