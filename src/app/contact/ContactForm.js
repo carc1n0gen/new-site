@@ -6,17 +6,19 @@ import ReCAPTCHA from "react-google-recaptcha";
 import Card from "@/components/Card";
 
 export default function ContactForm() {
-  // get initial system theme
-  const { matches } = matchMedia("(prefers-color-scheme: dark)");
   const [key, setKey] = useState(0);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [subject, setSubject] = useState("Blog Contact Form");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [theme, setTheme] = useState(matches ? "dark" : "light");
+  const [theme, setTheme] = useState("dark");
 
   useEffect(() => {
+    // get initial system theme
+    const { matches } = matchMedia("(prefers-color-scheme: dark)");
+    setTheme(matches ? "dark" : "light");
+
     // watch for system theme changing
     const handler = matchMedia("(prefers-color-scheme: dark)").addEventListener(
       "change",
