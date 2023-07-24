@@ -94,11 +94,14 @@ the system theme changes like this:
 
 ```js
 export default function MyForm() {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
 
   useEffect(() => {
-    // You can use matchMedia to detect if dark mode is enabled, and listen
-    // for when it changes.
+    // You can use matchMedia to detect if dark mode is enabled
+    const { matches } = matchMedia("(prefers-color-scheme: dark)");
+    setTheme(matches ? "dark" : "light");
+
+    // You can also use matchMedia to detect if light/dark mode has changed
     const handler = matchMedia("(prefers-color-scheme: dark)").addEventListener(
       "change",
       (e) => {
@@ -143,6 +146,9 @@ export default function MyForm() {
   const [theme, setTheme] = useState("dark");
 
   useEffect(() => {
+    const { matches } = matchMedia("(prefers-color-scheme: dark)");
+    setTheme(matches ? "dark" : "light");
+
     const handler = matchMedia("(prefers-color-scheme: dark)").addEventListener(
       "change",
       (e) => {
