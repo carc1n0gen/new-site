@@ -17,7 +17,7 @@ export default function Navigation() {
       <div className="md:max-w-screen-md mx-auto">
         <Link
           href="/"
-          className={`mr-6 hover:text-zinc-400 dark:hover:text-zinc-200 ${
+          className={`mx-3 hover:text-zinc-400 dark:hover:text-zinc-200 ${
             pathname !== "/archive/" && pathname !== "/contact/"
               ? activeClasses
               : ""
@@ -27,7 +27,7 @@ export default function Navigation() {
         </Link>
         <Link
           href="/archive"
-          className={`mr-6 hover:text-zinc-400 dark:hover:text-zinc-200  ${
+          className={`mx-3 hover:text-zinc-400 dark:hover:text-zinc-200  ${
             pathname === "/archive/" ? activeClasses : ""
           }`}
         >
@@ -35,7 +35,7 @@ export default function Navigation() {
         </Link>
         <Link
           href="/contact"
-          className={`mr-6 hover:text-zinc-400 dark:hover:text-zinc-200  ${
+          className={`mx-3 hover:text-zinc-400 dark:hover:text-zinc-200  ${
             pathname === "/contact/" ? activeClasses : ""
           }`}
         >

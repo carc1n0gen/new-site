@@ -58,7 +58,7 @@ export default function RootLayout({ children }) {
             title="Instagram"
             href="https://www.instagram.com/carsonphotosandstuff/"
             target="_blank"
-            className="ml-3"
+            className="ml-5"
           >
             <FaInstagram className="inline" />
           </Link>
@@ -66,7 +66,7 @@ export default function RootLayout({ children }) {
             title="Atom Feed"
             href="/feed.xml"
             target="_blank"
-            className="ml-3"
+            className="ml-5"
           >
             <FaRss className="inline" />
           </a>
