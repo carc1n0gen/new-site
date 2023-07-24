@@ -4,14 +4,13 @@ import path from "path";
 const POSTS_DIR = path.join(process.cwd(), "src/posts");
 
 export async function getSinglePost(year, month, day, slug) {
-  const { default: Post, meta } = await import(
-    `@/posts/${year}-${month}-${day}-${slug}.mdx`
-  );
-  // const { mtime } = await fs.stat(path.join(POSTS_DIR, file));
+  const fileName = `${year}-${month}-${day}-${slug}.mdx`;
+  const { mtime } = await fs.stat(path.join(POSTS_DIR, fileName));
+  const { default: Post, meta } = await import(`@/posts/${fileName}`);
 
   return {
     dateCreated: new Date(`${year}-${month}-${day}`),
-    // dateModified: mtime,
+    dateModified: mtime,
     year,
     month,
     day,

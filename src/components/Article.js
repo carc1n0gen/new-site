@@ -33,6 +33,14 @@ export default function Article({ post, isPreview }) {
       </section>
       {!isPreview && (
         <footer className="mt-6">
+          <p className="mb-4 text-sm text-zinc-400">
+            Updated{" "}
+            {post.dateModified.toLocaleString("default", {
+              month: "short",
+              day: "numeric",
+              year: "numeric",
+            })}
+          </p>
           <DisqusComments title={post.meta.title} postUrl={post.url} />
         </footer>
       )}

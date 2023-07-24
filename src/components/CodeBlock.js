@@ -1,8 +1,8 @@
 import hljs from "highlight.js";
 
 export default function CodeBlock({ children }) {
-  const className = children.props.className || "";
   const code = children.props.children.trim();
+  const className = children.props.className || "";
   const language = className.replace(/language-/, "");
 
   return (
