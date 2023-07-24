@@ -10,7 +10,7 @@ export default function SearchBoxFallback() {
       />
       <button
         type="submit"
-        className="px-4 py-1 border border-l-0 border-blue-500 dark:border-blue-400 rounded-md rounded-l-none bg-blue-500 dark:bg-blue-500 text-blue-50"
+        className="px-4 py-1 border border-l-0 border-blue-600 dark:border-blue-500 rounded-md rounded-l-none bg-blue-600 text-blue-50"
       >
         Search
       </button>

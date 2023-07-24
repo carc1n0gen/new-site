@@ -116,7 +116,7 @@ export default function ContactForm() {
                 theme={theme}
                 sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
               />
-              <button className="mt-4 md:ml-4 md:mt-0 px-14 py-2 bg-blue-500 text-3xl text-blue-50 rounded-md border dark:border-blue-400">
+              <button className="mt-4 md:ml-4 md:mt-0 px-14 py-2 bg-blue-600 text-3xl text-blue-50 rounded-md border dark:border-blue-500">
                 Send
               </button>
             </div>

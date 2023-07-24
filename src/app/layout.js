@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
         title="Atom Feed for Carson's Blog"
         href="/feed.xml"
       />
-      <body className="text-zinc-700 dark:text-zinc-300">
+      <body className="text-zinc-700 dark:text-zinc-100">
         <header className="bg-white dark:bg-black text-center md:text-left mt-5 md:mt-0 md:pt-10 border-b border-b-zinc-300 dark:border-b-zinc-600">
           <div className="md:max-w-screen-md px-2 md:px-0 mx-auto">
             <img
@@ -47,6 +47,7 @@ export default function RootLayout({ children }) {
         <footer className="mt-6 mb-6 flex items-center justify-center">
           &copy; Carson Evans{" "}
           <Link
+            title="Github"
             href="https://github.com/carc1n0gen"
             target="_blank"
             className="ml-5"
@@ -54,13 +55,19 @@ export default function RootLayout({ children }) {
             <FaGithub className="inline" />
           </Link>
           <Link
+            title="Instagram"
             href="https://www.instagram.com/carsonphotosandstuff/"
             target="_blank"
             className="ml-3"
           >
             <FaInstagram className="inline" />
           </Link>
-          <a href="/feed.xml" target="_blank" className="ml-3">
+          <a
+            title="Atom Feed"
+            href="/feed.xml"
+            target="_blank"
+            className="ml-3"
+          >
             <FaRss className="inline" />
           </a>
         </footer>
