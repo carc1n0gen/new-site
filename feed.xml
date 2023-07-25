@@ -2,14 +2,14 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.carsonevans.ca</id>
     <title>Carson's Blog</title>
-    <updated>2023-07-25T10:40:17.260Z</updated>
+    <updated>2023-07-25T11:22:52.929Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <author>
         <name>Carson Evans</name>
         <uri>https://blog.carsonevans.ca/contact</uri>
     </author>
     <link rel="alternate" href="https://blog.carsonevans.ca"/>
-    <link rel="self" href="https://blog.carsonevans.ca/feed"/>
+    <link rel="self" href="https://blog.carsonevans.ca/feed.xml"/>
     <subtitle>Somewhat coherent tutorials about web stuff and things.</subtitle>
     <entry>
         <title type="html"><![CDATA[How I Used Google reCaptcha In NextJS]]></title>
