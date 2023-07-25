@@ -2,6 +2,7 @@ import { Feed } from "feed";
 
 import { getPostList } from "@/lib/posts";
 
+// TODO: get host from request
 export async function GET() {
   const posts = await getPostList();
   const feed = new Feed({
@@ -11,7 +12,7 @@ export async function GET() {
     link: "https://blog.carsonevans.ca",
     language: "en",
     feedLinks: {
-      atom: "https://blog.carsonevans.ca/feed",
+      atom: "https://blog.carsonevans.ca/feed.xml",
     },
     author: {
       name: "Carson Evans",
