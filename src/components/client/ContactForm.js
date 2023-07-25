@@ -17,7 +17,13 @@ export default function ContactForm() {
   useEffect(() => {
     // get initial system theme
     const { matches } = matchMedia("(prefers-color-scheme: dark)");
-    setTheme(matches ? "dark" : "light");
+    if (matches && theme !== "dark") {
+      setTheme("dark");
+      setKey(key + 1);
+    } else if (!matches && theme !== "light") {
+      setTheme("light");
+      setKey(key + 1);
+    }
 
     // watch for system theme changing
     const handler = matchMedia("(prefers-color-scheme: dark)").addEventListener(
@@ -38,7 +44,7 @@ export default function ContactForm() {
         handler,
       );
     };
-  }, [key]);
+  }, [key, theme]);
 
   const onSubmit = useCallback(async (e) => {
     e.preventDefault();
