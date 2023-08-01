@@ -58,7 +58,6 @@ export async function getPostList() {
     const drafts = await Promise.all(
       (await fs.readdir(DRAFTS_DIR)).reverse().map(async (file) => {
         const [slug, _] = file.split(".");
-        console.log("******", slug);
         return getSingleDraft(slug);
       }),
     );
