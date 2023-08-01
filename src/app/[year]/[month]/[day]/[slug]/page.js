@@ -1,8 +1,15 @@
 import Article from "@/components/Article";
-import { getPostList, getSinglePost } from "@/lib/posts";
+import { getPostList, getSingleDraft, getSinglePost } from "@/lib/posts";
 
 export async function generateMetadata({ params: { year, month, day, slug } }) {
-  const { meta } = await getSinglePost(year, month, day, slug);
+  let meta;
+
+  if (process.env.WITH_DRAFTS === "true" && slug.startsWith("draft")) {
+    meta = (await getSingleDraft(slug)).meta;
+  } else {
+    meta = (await getSinglePost(year, month, day, slug)).meta;
+  }
+
   return {
     title: `${meta.title} - Carson's Blog`,
     description: meta.description,
@@ -11,7 +18,14 @@ export async function generateMetadata({ params: { year, month, day, slug } }) {
 }
 
 export default async function ShowPost({ params: { year, month, day, slug } }) {
-  const post = await getSinglePost(year, month, day, slug);
+  let post;
+
+  if (process.env.WITH_DRAFTS === "true" && slug.startsWith("draft")) {
+    post = await getSingleDraft(slug);
+  } else {
+    post = await getSinglePost(year, month, day, slug);
+  }
+
   return <Article post={post} />;
 }
 
