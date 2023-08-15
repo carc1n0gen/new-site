@@ -9,6 +9,7 @@ import CodeBlock from "./components/CodeBlock";
 import Heading from "./components/Heading";
 import List from "./components/List";
 import Paragraph from "./components/Paragraph";
+import Table from "./components/Table";
 
 // This file is required to use MDX in `app` directory.
 export function useMDXComponents(components) {
@@ -62,6 +63,7 @@ export function useMDXComponents(components) {
       <CodeBlock {...props}>{children}</CodeBlock>
     ),
     code: ({ children }) => <Code>{children}</Code>,
+    table: (props) => <Table {...props} />,
     ...components,
   };
 }
