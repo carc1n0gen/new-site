@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/carsonthecanuck
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://blog.carsonevans.ca
+  * I am carsonthecanuck (https://keybase.io/carsonthecanuck) on keybase.
+  * I have a public key ASAOtLzpKuIVdO0kPyJwMP133KCZlYH1-4xLbX_ViL0F2go
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01200eb4bce92ae21574ed243f227030fd77dca0999581f5fb8c4b6d7fd588bd05da0a",
+      "host": "keybase.io",
+      "kid": "01200eb4bce92ae21574ed243f227030fd77dca0999581f5fb8c4b6d7fd588bd05da0a",
+      "uid": "91a209c518ef46dbade5e83d0a0f2d19",
+      "username": "carsonthecanuck"
+    },
+    "merkle_root": {
+      "ctime": 1694782680,
+      "hash": "92730bc00fd5f5b28c1a9f4de2bd9613e0a56052e8128f82ff2de7e1f713976425137015ee58c85ffef37ea5c546410fcbf70dfda820723512d14f49f43d42ca",
+      "hash_meta": "8d4a719a69a102b95d32524bc0e41eb8f651371e2c21f789894e2e1ed0fb223c",
+      "seqno": 24924827
+    },
+    "service": {
+      "entropy": "++7qcXH4Me3XXim87wRrKw7q",
+      "hostname": "blog.carsonevans.ca",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "6.2.2"
+  },
+  "ctime": 1694782742,
+  "expire_in": 504576000,
+  "prev": "0f70a7bafd8cf3bb4501e90beb68069bd29dca01b079535b66495aa653703dcd",
+  "seqno": 5,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgDrS86SriFXTtJD8icDD9d9ygmZWB9fuMS21/1Yi9BdoKp3BheWxvYWTESpcCBcQgD3Cnuv2M87tFAekL62gGm9KdygGweVNbZklaplNwPc3EIF5LhZ56yZLYA1bxYo6umvyFDBiAgZqp1aQBU8ECcM9JAgHCo3NpZ8RABW78eQxtRxGAsvQf6X9juzZ9BG/c8cLLpFyw9hbDTftCffKAnfmYUO3zGveY0MG5YoYvEUG4TeiuCg39vAnJAqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIBta6K9YeZrkKCejAtVtyepVquHIhj8a528PH9n0elm6o3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/carsonthecanuck
+
+==================================================================
