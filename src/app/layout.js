@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
           <a href="/">
             <img src="/img/avatar.jpg" alt="Avatar Photo" width="150" class="rounded-full" />
           </a>
-          <h1 className="text-[inherit] text-2xl lg:text-5xl mb-8">I'm Carson</h1>
+          <h1 className="text-[inherit] text-2xl lg:text-5xl my-4 lg:mb-8">I'm Carson</h1>
           <p className="lg:ml-12">I do web stuff and things, and also photography</p>
           <Navigation />
           <footer className="hidden md:block mt-[auto]">
