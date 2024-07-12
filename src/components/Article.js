@@ -8,7 +8,7 @@ export default function Article({ post, isPreview }) {
     <article className="mb-16 last:mb-0">
       <header>
         <Link href={post.url}>
-          <h2 className="text-4xl font-normal mb-0">{post.meta.title}</h2>
+          <h2 className="text-2xl md:text-4xl font-normal mb-0">{post.meta.title}</h2>
         </Link>
         <p className="ml-1 mb-4 text-sm">
           posted by {post.meta.author} ·{" "}
