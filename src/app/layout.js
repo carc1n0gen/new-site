@@ -10,7 +10,7 @@ import "./globals.css";
 
 export const metadata = {
   title: "Carson's Blog",
-  description: "Somewhat coherent tutorials about web stuff and things.",
+  description: "I do web stuff and things, and also photography",
 };
 
 const inter = Inter({subsets: ['latin']});
