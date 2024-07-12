@@ -4,6 +4,8 @@ import { FaGithub, FaInstagram, FaRss } from "react-icons/fa";
 import GoogleAnalytics from "@/components/client/GoogleAnalytics";
 import Navigation from "@/components/client/Navigation";
 
+import {Inter} from "next/font/google";
+
 import "./globals.css";
 
 export const metadata = {
@@ -11,46 +13,63 @@ export const metadata = {
   description: "Somewhat coherent tutorials about web stuff and things.",
 };
 
+const inter = Inter({subsets: ['latin']});
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="dark:bg-black md:bg-zinc-50 md:dark:bg-zinc-800">
+    <html lang="en" className="bg-[#fff] text-zinc-500">
       <link
         rel="alternate"
         type="application/atom+xml"
         title="Atom Feed for Carson's Blog"
         href="/feed.xml"
       />
-      <body className="text-zinc-700 dark:text-zinc-100">
-        <header className="bg-white dark:bg-black text-center md:text-left mt-5 md:mt-0 md:pt-10 border-b border-b-zinc-300 dark:border-b-zinc-600">
-          <div className="md:max-w-screen-md px-2 md:px-0 mx-auto">
-            <img
-              src="/img/avatar-new.jpg"
-              alt="Avatar photo"
-              className="rounded-full mx-auto md:float-right md:-mt-4"
-              width="100"
-              height="100"
-            />
-            <div className="mt-5">
-              <Link href="/" className="mt-2">
-                <h1 className="text-5xl font-bold">Carson's Blog</h1>
-              </Link>
-              <p className="mt-2">
-                Somewhat coherent tutorials about web stuff and things.
-              </p>
-            </div>
-          </div>
+      <body className={inter.className}>
+        <header className="site-header md:fixed w-full md:w-[35%] md:h-full flex flex-col items-center lg:items-end p-4 lg:py-[8rem] lg:px-[4rem] text-center lg:text-right text-zinc-300">
+          <a href="/">
+            <img src="/img/avatar.jpg" alt="Avatar Photo" width="150" class="rounded-full" />
+          </a>
+          <h1 className="text-[inherit] md:text-2xl lg:text-5xl mb-8">I'm Carson</h1>
+          <p className="lg:ml-12">I do web stuff and things, and also photography</p>
           <Navigation />
+          <footer className="hidden md:block mt-[auto]">
+            &copy; Carson Evans
+
+            <Link
+              title="Github"
+              href="https://github.com/carc1n0gen"
+              target="_blank"
+              className="ml-5"
+            >
+              <FaGithub className="inline" />
+            </Link>
+            <Link
+              title="Instagram"
+              href="https://www.instagram.com/carsonphotosandstuff/"
+              target="_blank"
+              className="ml-5"
+            >
+              <FaInstagram className="inline" />
+            </Link>
+            <a
+              title="Atom Feed"
+              href="/feed.xml"
+              target="_blank"
+              className="ml-5"
+            >
+              <FaRss className="inline" />
+            </a>
+          </footer>
         </header>
-        <main className="px-4 py-2 md:p-0 md:max-w-screen-md mx-auto">
+        <main className="md:ml-[35%] md:w-[65%] max-w-4xl py-[4rem] lg:py-[8rem] px-[2rem] lg:px-[4rem]">
           {children}
         </main>
-        <footer className="mt-6 mb-6 flex items-center justify-center">
-          &copy; Carson Evans{" "}
+        <footer className="bottom-footer px-4 py-12 md:hidden text-center text-zinc-300">
           <Link
             title="Github"
             href="https://github.com/carc1n0gen"
             target="_blank"
-            className="ml-5"
+            className="md:ml-5 text-4xl"
           >
             <FaGithub className="inline" />
           </Link>
@@ -58,7 +77,7 @@ export default function RootLayout({ children }) {
             title="Instagram"
             href="https://www.instagram.com/carsonphotosandstuff/"
             target="_blank"
-            className="ml-5"
+            className="ml-5 text-4xl"
           >
             <FaInstagram className="inline" />
           </Link>
@@ -66,10 +85,11 @@ export default function RootLayout({ children }) {
             title="Atom Feed"
             href="/feed.xml"
             target="_blank"
-            className="ml-5"
+            className="ml-5 text-4xl"
           >
             <FaRss className="inline" />
           </a>
+          <div className="mt-4 text-2xl">&copy; Carson Evans</div>
         </footer>
         <GoogleAnalytics />
       </body>

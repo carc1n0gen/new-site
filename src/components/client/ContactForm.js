@@ -1,50 +1,16 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 
-import Card from "@/components/Card";
+import Button from "../Button";
 
 export default function ContactForm() {
-  const [key, setKey] = useState(0);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [subject, setSubject] = useState("Blog Contact Form");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [theme, setTheme] = useState("light");
-
-  useEffect(() => {
-    // get initial system theme
-    const { matches } = matchMedia("(prefers-color-scheme: dark)");
-    if (matches && theme !== "dark") {
-      setTheme("dark");
-      setKey(key + 1);
-    } else if (!matches && theme !== "light") {
-      setTheme("light");
-      setKey(key + 1);
-    }
-
-    // watch for system theme changing
-    const handler = matchMedia("(prefers-color-scheme: dark)").addEventListener(
-      "change",
-      (e) => {
-        if (e.target.matches) {
-          setTheme("dark");
-        } else {
-          setTheme("light");
-        }
-        setKey(key + 1);
-      },
-    );
-
-    return function cleanup() {
-      matchMedia("(prefers-color-scheme: dark)").removeEventListener(
-        "change",
-        handler,
-      );
-    };
-  }, [key, theme]);
 
   const onSubmit = useCallback(async (e) => {
     e.preventDefault();
@@ -66,7 +32,7 @@ export default function ContactForm() {
   }, []);
 
   return (
-    <Card as="section">
+    <>
       {!isSubmitted && (
         <>
           <p className="mb-4">
@@ -79,52 +45,59 @@ export default function ContactForm() {
             onSubmit={onSubmit}
           >
             <input type="hidden" name="subject" value={subject} />
-            <label htmlFor="name" className="block text-2xl font-bold mb-2">
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={name}
-              onChange={onNameChange}
-              required
-              className="block w-full mb-4 p-2 bg-zinc-50 dark:bg-zinc-700 rounded border border-zinc-300 dark:border-zinc-500"
-            />
-            <label htmlFor="email" className="block text-2xl font-bold mb-2">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="block w-full mb-4 p-2 bg-zinc-50 dark:bg-zinc-700 rounded border border-zinc-300 dark:border-zinc-500"
-            />
-            <label htmlFor="message" className="block text-2xl font-bold mb-2">
+
+            <div className="flex flex-col md:flex-row">
+              <div className="flex-grow mr-4">
+                <label htmlFor="name" className="block text-2xl mb-2 hidden">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Name"
+                  value={name}
+                  onChange={onNameChange}
+                  required
+                  className="block w-full mb-4 p-2 bg-zinc-100 rounded"
+                />
+              </div>
+              <div className="flex-grow mr-4">
+                <label htmlFor="email" className="block text-2xl mb-2 hidden">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  className="block w-full mb-4 p-2 bg-zinc-100 rounded"
+                />
+              </div>
+            </div>
+            <label htmlFor="message" className="block text-2xl mb-2 hidden">
               Message
             </label>
             <textarea
               id="message"
               name="message"
               value={message}
+              placeholder="Message"
               onChange={(e) => setMessage(e.target.value)}
               required
-              className="block w-full mb-4 p-2 bg-zinc-50 dark:bg-zinc-700 rounded border border-zinc-300 dark:border-zinc-500 h-72"
+              className="block w-full mb-4 p-2 bg-zinc-100 rounded h-72"
             ></textarea>
-            <div className="flex flex-col md:flex-row items-center justify-center md:justify-end">
+            <div className="flex flex-row items-center justify-end">
               <ReCAPTCHA
-                // This key is used to remount the component so the theme updates
-                key={key}
                 size="normal"
-                theme={theme}
                 sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
               />
-              <button className="mt-4 md:ml-4 md:mt-0 px-14 py-2 bg-blue-600 text-3xl text-blue-50 rounded-md border dark:border-blue-500">
+              <Button type="submit">
                 Send
-              </button>
+              </Button>
             </div>
           </form>
         </>
@@ -135,6 +108,6 @@ export default function ContactForm() {
           <p>I will get back to you ASAP.</p>
         </>
       )}
-    </Card>
+    </>
   );
 }

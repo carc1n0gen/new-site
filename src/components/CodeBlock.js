@@ -6,9 +6,9 @@ export default function CodeBlock({ children }) {
   const language = className.replace(/language-/, "");
 
   return (
-    <pre className="my-4 -mx-4 md:-mx-[24px]">
+    <pre>
       <code
-        className="hljs bg-zinc-100 dark:bg-zinc-700"
+        className="hljs rounded-lg"
         dangerouslySetInnerHTML={{
           __html: hljs.highlight(code, { language }).value,
         }}

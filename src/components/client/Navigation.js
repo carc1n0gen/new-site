@@ -2,22 +2,22 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Suspense } from "react";
+// import { Suspense } from "react";
 
-import SearchBoxFallback from "../SearchBoxFallback";
-import SearchBox from "./SearchBox";
+// import SearchBoxFallback from "../SearchBoxFallback";
+// import SearchBox from "./SearchBox";
 
 const activeClasses =
-  "font-bold border-b-4 border-b-zinc-300 dark:border-b-zinc-600";
+  "font-bold border-b border-b-2";
 
 export default function Navigation() {
   const pathname = usePathname();
   return (
-    <nav className="border-t border-t-zinc-300 dark:border-t-zinc-600 mt-5 md:mt-10 py-5">
-      <div className="md:max-w-screen-md mx-auto">
+    <nav className="mt-5 md:mt-10 py-5">
+      <div className="">
         <Link
           href="/"
-          className={`mx-3 hover:text-zinc-400 dark:hover:text-zinc-200 ${
+          className={`mx-3 hover:text-zinc-100 ${
             pathname !== "/archive/" && pathname !== "/contact/"
               ? activeClasses
               : ""
@@ -27,7 +27,7 @@ export default function Navigation() {
         </Link>
         <Link
           href="/archive"
-          className={`mx-3 hover:text-zinc-400 dark:hover:text-zinc-200  ${
+          className={`mx-3 hover:text-zinc-100 ${
             pathname === "/archive/" ? activeClasses : ""
           }`}
         >
@@ -35,15 +35,15 @@ export default function Navigation() {
         </Link>
         <Link
           href="/contact"
-          className={`mx-3 hover:text-zinc-400 dark:hover:text-zinc-200  ${
+          className={`ml-3 hover:text-zinc-100 ${
             pathname === "/contact/" ? activeClasses : ""
           }`}
         >
           Contact
         </Link>
-        <Suspense fallback={<SearchBoxFallback />}>
+        {/* <Suspense fallback={<SearchBoxFallback />}>
           <SearchBox />
-        </Suspense>
+        </Suspense> */}
       </div>
     </nav>
   );

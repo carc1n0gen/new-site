@@ -14,6 +14,6 @@ export default function Heading({ as: Component, children }) {
     }
   }, [Component]);
   return (
-    <Component className={`${size} font-bold mt-6 mb-2`}>{children}</Component>
+    <Component className={`${size} font-normal mt-6 mb-2`}>{children}</Component>
   );
 }

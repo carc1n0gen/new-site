@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { useMemo } from "react";
 
-import Card from "@/components/Card";
-
 export default function GroupedPosts({ posts }) {
   const groupedPosts = useMemo(() => {
     const groups = {};
@@ -20,24 +18,22 @@ export default function GroupedPosts({ posts }) {
 
   if (Object.keys(groupedPosts).length === 0) {
     return (
-      <Card>
-        <p>There is nothing here.</p>
-      </Card>
+      <p>There is nothing here.</p>
     );
   }
 
   return Object.keys(groupedPosts)
     .reverse()
     .map((group) => (
-      <Card key={group}>
-        <h2 className="text-3xl font-bold mb-4">{group}</h2>
+      <section key={group} className="mb-16 last:mb-0">
+        <h2 className="text-3xl">{group}</h2>
         <ul className="list-disc list-inside pl-4">
           {groupedPosts[group].map((post) => (
-            <li key={post.url}>
-              <Link href={post.url} className="font-bold">
+            <li key={post.url} className="my-2 last:mb-0">
+              <Link href={post.url} className="">
                 {post.meta.title}
               </Link>
-              <span className="ml-2 text-sm text-zinc-500">
+              <span className="ml-2 text-sm text-zinc-400">
                 {post.dateCreated.toLocaleString("default", {
                   month: "long",
                   day: "numeric",
@@ -46,6 +42,6 @@ export default function GroupedPosts({ posts }) {
             </li>
           ))}
         </ul>
-      </Card>
+      </section>
     ));
 }

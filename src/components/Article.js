@@ -1,16 +1,16 @@
 import Link from "next/link";
 
-import Card from "./Card";
+import Button from "./Button";
 import DisqusComments from "./client/DisqusComments";
 
 export default function Article({ post, isPreview }) {
   return (
-    <Card as="article">
+    <article className="mb-16">
       <header>
         <Link href={post.url}>
-          <h2 className="text-3xl font-bold mb-2">{post.meta.title}</h2>
+          <h2 className="text-4xl font-normal mb-0">{post.meta.title}</h2>
         </Link>
-        <p className="mb-4 text-sm text-zinc-400">
+        <p className="ml-1 mb-4 text-sm">
           posted by {post.meta.author} ·{" "}
           {post.dateCreated.toLocaleString("default", {
             month: "short",
@@ -21,19 +21,19 @@ export default function Article({ post, isPreview }) {
       </header>
       <section>
         {isPreview ? (
-          <p className="mb-4 md:mb-0">
-            {post.meta.description}{" "}
-            <Link href={post.url} className="font-bold underline">
-              Read more&hellip;
-            </Link>
-          </p>
+          <>
+            <p className="mb-4">
+              {post.meta.description}{" "}
+            </p>
+            <Button as={Link} href={post.url}>Read more</Button>
+          </>
         ) : (
           <post.Post />
         )}
       </section>
       {!isPreview && (
         <footer className="mt-6">
-          <p className="mb-4 text-sm text-zinc-400">
+          <p className="mb-4 text-sm">
             Updated{" "}
             {post.dateModified.toLocaleString("default", {
               month: "short",
@@ -44,6 +44,6 @@ export default function Article({ post, isPreview }) {
           <DisqusComments title={post.meta.title} postUrl={post.url} />
         </footer>
       )}
-    </Card>
+    </article>
   );
 }
