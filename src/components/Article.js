@@ -5,7 +5,7 @@ import DisqusComments from "./client/DisqusComments";
 
 export default function Article({ post, isPreview }) {
   return (
-    <article className="mb-16">
+    <article className="mb-16 last:mb-0">
       <header>
         <Link href={post.url}>
           <h2 className="text-4xl font-normal mb-0">{post.meta.title}</h2>
