@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <header className="site-header md:fixed w-full md:w-[35%] md:h-full flex flex-col items-center lg:items-end p-4 lg:py-[8rem] lg:px-[4rem] text-center lg:text-right text-zinc-300">
           <a href="/">
-            <img src="/img/avatar.jpg" alt="Avatar Photo" width="150" class="rounded-full" />
+            <img src="/img/avatar.jpg" alt="Avatar Photo" width="150" className="rounded-full" />
           </a>
           <h1 className="text-[inherit] text-2xl lg:text-5xl my-4 lg:mb-8">I'm Carson</h1>
           <p className="lg:ml-12">I do web stuff and things, and also photography</p>
