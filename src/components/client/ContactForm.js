@@ -90,7 +90,7 @@ export default function ContactForm() {
               required
               className="block w-full mb-4 p-2 bg-zinc-100 rounded h-72"
             ></textarea>
-            <div className="flex flex-row items-center justify-end">
+            <div className="flex flex-col md:flex-row items-center justify-center md:justify-end">
               <ReCAPTCHA
                 size="normal"
                 sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
