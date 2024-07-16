@@ -95,11 +95,9 @@ export default function ContactForm() {
                 size="normal"
                 sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
               />
-              <div className="ml-4">
-                <Button type="submit">
-                  Send
-                </Button>
-              </div>
+              <Button type="submit" className="md:ml-4 mt-4 md:mt-0 w-full md:w-auto">
+                Send
+              </Button>
             </div>
           </form>
         </>
