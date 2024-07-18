@@ -10,7 +10,7 @@ export default function Article({ post, isPreview }) {
         <Link href={post.url}>
           <h2 className="text-2xl md:text-4xl font-normal mb-0">{post.meta.title}</h2>
         </Link>
-        <p className="ml-1 mb-4 text-sm">
+        <p className="ml-1 mb-4 text-sm text-zinc-500">
           posted by {post.meta.author} ·{" "}
           {post.dateCreated.toLocaleString("default", {
             month: "short",

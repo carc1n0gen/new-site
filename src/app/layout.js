@@ -17,7 +17,7 @@ const inter = Inter({subsets: ['latin']});
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="bg-[#fff] text-zinc-500">
+    <html lang="en" className="bg-zinc-50 text-zinc-600">
       <link
         rel="alternate"
         type="application/atom+xml"

@@ -48,7 +48,7 @@ export default function ContactForm() {
 
             <div className="flex flex-col md:flex-row">
               <div className="flex-grow mr-4">
-                <label htmlFor="name" className="block text-2xl mb-2 hidden">
+                <label htmlFor="name" className="text-2xl mb-2 hidden">
                   Name
                 </label>
                 <input
@@ -63,7 +63,7 @@ export default function ContactForm() {
                 />
               </div>
               <div className="flex-grow mr-4">
-                <label htmlFor="email" className="block text-2xl mb-2 hidden">
+                <label htmlFor="email" className="text-2xl mb-2 hidden">
                   Email
                 </label>
                 <input
@@ -78,7 +78,7 @@ export default function ContactForm() {
                 />
               </div>
             </div>
-            <label htmlFor="message" className="block text-2xl mb-2 hidden">
+            <label htmlFor="message" className="text-2xl mb-2 hidden">
               Message
             </label>
             <textarea

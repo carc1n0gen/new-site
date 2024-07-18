@@ -8,15 +8,11 @@ body {
   font-family: sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: #787878;
-}
-
 .site-header,
 .bottom-footer {
   background-position: 0;
   background-attachment: scroll;
-  background-image: url("/img/overlay.png"), url("/img/bg.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/img/bg.jpg");
   background-repeat: repeat, no-repeat;
   background-size: auto, 250%;
 }
